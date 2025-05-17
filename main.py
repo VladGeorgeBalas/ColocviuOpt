@@ -18,10 +18,10 @@ print("Nume imagine: " + image_path)
 print("Marime imagine: " + str(m) + "x" + str(n))
 
 from tv_isotropic import tv_isotropic, tv_iso_mat
-from tv_ansiometric import tv_aniso_mat
+from gradient import gradient
 
 # image = tv_iso_mat(image)
-image = (tv_aniso_mat(image) + 1) * 125
+image = gradient(255 * numpy.ones((m, n)), image, 0.1, 0.1)
 
 # Debug imagine
 #######################################

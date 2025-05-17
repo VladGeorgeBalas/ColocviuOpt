@@ -81,9 +81,9 @@ def tv_iso_mat(image_matrix):
             if j > 0 and base[i, j - 1] != 0:
                 result[i, j] += ( 1 / base[i, j - 1] ) * mat3[i,j]
 
-    cv2.imshow("base", base.astype('uint8'))
-    cv2.imshow("mat1", mat1.astype('uint8'))
-    cv2.imshow("mat2", mat2.astype('uint8'))
-    cv2.imshow("mat3", mat3.astype('uint8'))
+    # cv2.imshow("base", base.astype('uint8'))
+    # cv2.imshow("mat1", mat1.astype('uint8'))
+    # cv2.imshow("mat2", mat2.astype('uint8'))
+    # cv2.imshow("mat3", mat3.astype('uint8'))
 
     return result
