@@ -50,7 +50,38 @@ def tv_isotropic(image_matrix):
 
 def tv_iso_mat(image_matrix):
     from scipy.ndimage import shift
+    import cv2
     (m, n) = image_matrix.shape
-    result = numpy.power(image_matrix - shift(image_matrix, (-1,0), cval=0), 2) + numpy.power(image_matrix - shift(image_matrix, (0,-1), cval=0), 2)
+
+    base = numpy.sqrt(
+            numpy.power(image_matrix - shift(image_matrix, (-1,0), cval=0), 2) +
+            numpy.power(image_matrix - shift(image_matrix, (0,-1), cval=0), 2)
+    )
+
+    mat1 = (
+            image_matrix - shift(image_matrix, (-1,0), cval=0) +
+            image_matrix - shift(image_matrix, (0,-1), cval=0)
+    )
+
+    mat2 = (
+        image_matrix - shift(image_matrix, (1, 0), cval=0)
+    )
+
+    mat3 = (
+            image_matrix - shift(image_matrix, (0, 1), cval=0)
+    )
+
+    mat123 = mat1 + mat2 + mat3
+
+    result = numpy.zeros((m, n))
+    for i in range(0, m - 1):
+        for j in range(0, n - 1):
+            if base[i,j] != 0:
+                result[i, j] += 1/base[i,j] * mat123[i, j]
+
+    cv2.imshow("base", base.astype('uint8'))
+    cv2.imshow("mat1", mat1.astype('uint8'))
+    cv2.imshow("mat2", mat2.astype('uint8'))
+    cv2.imshow("mat3", mat3.astype('uint8'))
 
     return result
