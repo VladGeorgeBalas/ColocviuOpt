@@ -71,13 +71,15 @@ def tv_iso_mat(image_matrix):
             image_matrix - shift(image_matrix, (0, 1), cval=0)
     )
 
-    mat123 = mat1 + mat2 + mat3
-
     result = numpy.zeros((m, n))
     for i in range(0, m - 1):
         for j in range(0, n - 1):
             if base[i,j] != 0:
-                result[i, j] += 1/base[i,j] * mat123[i, j]
+                result[i, j] += ( 1 / base[i,j] ) * mat1[i,j]
+            if i > 0 and base[i - 1, j] != 0:
+                result[i, j] += ( 1 / base[i - 1, j] ) * mat2[i,j]
+            if j > 0 and base[i, j - 1] != 0:
+                result[i, j] += ( 1 / base[i, j - 1] ) * mat3[i,j]
 
     cv2.imshow("base", base.astype('uint8'))
     cv2.imshow("mat1", mat1.astype('uint8'))
