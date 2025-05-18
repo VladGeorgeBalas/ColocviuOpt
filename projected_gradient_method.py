@@ -21,7 +21,7 @@ def ProjectedGradient(sursa, a, b):
         # momentan metoda banala cu un coeficient descrescator
         # NEAPARAT eficientizam numarul de iteratii cu un primal-dual splitting later
         # SI PE FIECARE A SI B IN PARTE CA E GRAV ALTFEl
-        new_image = new_image - gradient.subgradient(new_image, a * alpha, b * alpha)
+        new_image = new_image - 1 * gradient.subgradient(new_image, a, b)
 
         #projection
         # proiectare gresita, se ia [a, b] si se proiecteaza pe [0, 255]
