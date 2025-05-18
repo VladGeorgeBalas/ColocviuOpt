@@ -7,6 +7,7 @@ def BarrierGradient(sursa, a, b):
     ok = True
     image_matrix = np.copy(sursa)
     bar_coef = 1e-1
+    err = []
     while (iters < max_iter) and ok:
         iters = iters + 1
         # aplicam prima oara gradient lipschitz
@@ -23,10 +24,11 @@ def BarrierGradient(sursa, a, b):
         new_image = new_image - bar_coef * gradient.barrier_gradient(new_image)
 
         norm = np.linalg.norm(image_matrix - new_image, 'fro')
+        err.append(norm)
         ok = ( norm > 1e-6 )
         image_matrix = new_image
 
     print ("iter = ", iters)
     print ("norm = ", norm)
     print (image_matrix[image_matrix > 255])
-    return image_matrix
+    return (image_matrix, err)

@@ -1,11 +1,13 @@
 import gradient
 import numpy as np
+import numpy
 
 def ProjectedGradient(sursa, a, b):
-    max_iter = 1000
+    max_iter = 500
     iters = 0
     ok = True
-    image_matrix = np.copy(sursa)
+    image_matrix = np.copy(sursa).astype("float32")
+    err = []
     while (iters < max_iter) and ok:
         iters = iters + 1
         print("Iteratia: " + str(iters))
@@ -13,7 +15,6 @@ def ProjectedGradient(sursa, a, b):
         alpha = 0.1
 
         # aplicam prima oara gradient lipschitz
-        # aici alpha nu?? >:(
         new_image = image_matrix - alpha * gradient.gradient1_L(sursa, image_matrix)
 
         #aplicam subgradientul :[
@@ -25,13 +26,23 @@ def ProjectedGradient(sursa, a, b):
         #projection
         # proiectare gresita, se ia [a, b] si se proiecteaza pe [0, 255]
         # nu taiem din imagine ca ne trezim cu puncte negre sau albe, bai
-        new_image = np.clip(new_image, 0, 255)
 
-        #norm = np.linalg.norm(image_matrix - new_image, 'fro')
-        norm = 1
-        ok = ( norm > 1e-4 )
+        # noua proiectie, trebuie eficientizata
+        min = numpy.min(new_image)
+        if min < 0:
+            new_image = new_image + numpy.ones(new_image.shape) * (-min)
+        max = numpy.max(new_image)
+        if max > 255:
+            new_image = new_image * ( 255 / max)
+
+        # proiectie veche
+        # new_image = np.clip(new_image, 0, 255)
+
+        norm = np.linalg.norm(image_matrix - new_image, 'fro')
+        err.append(norm)
+        ok = ( norm > 1e-3 )
         image_matrix = new_image
 
     print ("iter = ", iters)
     print ("norm = ", norm)
-    return image_matrix
+    return (image_matrix, err)
