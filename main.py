@@ -7,7 +7,7 @@ from projected_gradient_method import ProjectedGradient
 print("Versiune OpenCV" + cv2.__version__)
 
 # Citire imagine
-image_path = "example2_noise.jpg"
+image_path = "Poze/example2_noise.jpg"
 image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
 
 # Debug imagine

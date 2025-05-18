@@ -3,7 +3,7 @@ import numpy as np
 import numpy
 
 def ProjectedGradient(sursa, a, b):
-    max_iter = 500
+    max_iter = 100
     iters = 0
     ok = True
     image_matrix = np.copy(sursa).astype("float32")
@@ -12,7 +12,7 @@ def ProjectedGradient(sursa, a, b):
         iters = iters + 1
         print("Iteratia: " + str(iters))
 
-        alpha = 0.1
+        alpha = 0.2
 
         # aplicam prima oara gradient lipschitz
         new_image = image_matrix - alpha * gradient.gradient1_L(sursa, image_matrix)

@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="037fcec0-8faa-435f-82d7-fd6cce55c5dd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Poze/example10.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poze/example12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poze/example3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poze/example4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poze/example5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poze/example6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poze/example6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poze/example7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poze/example8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poze/example9.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Poze/example1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Poze/example2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example2_noise.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Poze/example2_noise.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projected_gradient_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/projected_gradient_method.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +80,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vladb\PycharmProjects\ColocviuOpt\Poze" />
       <recent name="C:\Users\vladb\PycharmProjects\ColocviuOpt" />
     </key>
   </component>
@@ -89,7 +105,7 @@
       <workItem from="1747555075290" duration="4274000" />
       <workItem from="1747578713216" duration="884000" />
       <workItem from="1747598268503" duration="97000" />
-      <workItem from="1747599009530" duration="18000" />
+      <workItem from="1747599009530" duration="1396000" />
     </task>
     <servers />
   </component>
@@ -98,8 +114,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ColocviuOpt$tv_isotropic.coverage" NAME="tv_isotropic Coverage Results" MODIFIED="1747484077494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ColocviuOpt$projected_gradient_method.coverage" NAME="projected_gradient_method Coverage Results" MODIFIED="1747573423967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ColocviuOpt$projected_gradient_method.coverage" NAME="projected_gradient_method Coverage Results" MODIFIED="1747599728060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ColocviuOpt$tv_ansiometric.coverage" NAME="tv_ansiometric Coverage Results" MODIFIED="1747487076769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ColocviuOpt$main.coverage" NAME="main Coverage Results" MODIFIED="1747578886080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ColocviuOpt$main.coverage" NAME="main Coverage Results" MODIFIED="1747599731818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
