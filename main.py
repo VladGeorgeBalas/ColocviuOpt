@@ -23,8 +23,8 @@ from tv_isotropic import tv_isotropic, tv_iso_mat
 
 # image = tv_iso_mat(image)
 # image = gradient(255 * numpy.ones((m, n)), image, 0.1, 0.1)
-# image = ProjectedGradient(image, 2, 0.1)
-image = BarrierGradient(image, 2, 0.1)
+image = ProjectedGradient(image, 2, 0.1)
+# image = BarrierGradient(image, 2, 0.1)
 
 # Debug imagine
 #######################################

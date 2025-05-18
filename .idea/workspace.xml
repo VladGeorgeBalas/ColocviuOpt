@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="037fcec0-8faa-435f-82d7-fd6cce55c5dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/gradient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ColocviuOpt.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ColocviuOpt.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tv_isotropic.py" beforeDir="false" afterPath="$PROJECT_DIR$/tv_isotropic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projected_gradient_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/projected_gradient_method.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +49,7 @@
   "keyToString": {
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "Python.main.executor": "Run",
+    "Python.projected_gradient_method.executor": "Run",
     "Python.tv_ansiometric.executor": "Run",
     "Python.tv_isotropic.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -89,6 +88,7 @@
       <updated>1747210293022</updated>
       <workItem from="1747210294086" duration="436000" />
       <workItem from="1747489532066" duration="526000" />
+      <workItem from="1747555075290" duration="4274000" />
     </task>
     <servers />
   </component>
@@ -97,7 +97,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ColocviuOpt$tv_isotropic.coverage" NAME="tv_isotropic Coverage Results" MODIFIED="1747484077494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ColocviuOpt$projected_gradient_method.coverage" NAME="projected_gradient_method Coverage Results" MODIFIED="1747558833778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ColocviuOpt$tv_ansiometric.coverage" NAME="tv_ansiometric Coverage Results" MODIFIED="1747487076769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ColocviuOpt$main.coverage" NAME="main Coverage Results" MODIFIED="1747489912212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ColocviuOpt$main.coverage" NAME="main Coverage Results" MODIFIED="1747559056012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
