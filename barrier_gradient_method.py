@@ -10,6 +10,7 @@ def BarrierGradient(sursa, a, b):
     err = []
     while (iters < max_iter) and ok:
         iters = iters + 1
+        print("Iteratia: " + str(iters))
         # aplicam prima oara gradient lipschitz
         new_image = image_matrix - gradient.gradient1_L(sursa, image_matrix)
 
