@@ -71,16 +71,32 @@ def tv_iso_mat(image_matrix):
             image_matrix - shift(image_matrix, (0, 1), cval=0)
     )
 
-    result = numpy.zeros((m, n))
-    for i in range(0, m - 1):
-        for j in range(0, n - 1):
-            if base[i,j] != 0:
-                result[i, j] += ( 1 / base[i,j] ) * mat1[i,j]
-            if i > 0 and base[i - 1, j] != 0:
-                result[i, j] += ( 1 / base[i - 1, j] ) * mat2[i,j]
-            if j > 0 and base[i, j - 1] != 0:
-                result[i, j] += ( 1 / base[i, j - 1] ) * mat3[i,j]
+    # Create shifted views with padding to handle edges
+    inv_base = numpy.zeros_like(base, dtype=float)
+    nonzero = base != 0
+    inv_base[nonzero] = 1.0 / base[nonzero]
 
+    result = numpy.zeros((m, n), dtype=float)
+
+    # Current cell
+    result[:-1, :-1] += inv_base[:-1, :-1] * mat1[:-1, :-1]
+
+    # Top neighbor
+    result[1:, :-1] += inv_base[:-1, :-1] * mat2[1:, :-1]
+
+    # Left neighbor
+    result[:-1, 1:] += inv_base[:-1, :-1] * mat3[:-1, 1:]
+
+
+    #result = numpy.zeros((m, n))
+    #for i in range(0, m - 1):
+     #   for j in range(0, n - 1):
+      #      if base[i, j] != 0:
+       #         result[i, j] += (1 / base[i, j]) * mat1[i, j]
+        #    if i > 0 and base[i - 1, j] != 0:
+         #       result[i, j] += (1 / base[i - 1, j]) * mat2[i, j]
+          #  if j > 0 and base[i, j - 1] != 0:
+           #     result[i, j] += (1 / base[i, j - 1]) * mat3[i, j]
     # cv2.imshow("base", base.astype('uint8'))
     # cv2.imshow("mat1", mat1.astype('uint8'))
     # cv2.imshow("mat2", mat2.astype('uint8'))
