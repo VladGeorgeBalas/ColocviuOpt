@@ -28,15 +28,15 @@ from cvx_grad import cvx_solve
 (image_pro, err_pro) = ProjectedGradient(image, 2, 0.1)
 plt.plot(numpy.log(err_pro), label="Projected Gradient")
 plt.show()
-# (image_bar, err_bar) = BarrierGradient(image, 2, 1)
-# plt.plot(numpy.log(err_bar), label="Barrier Gradient")
-# plt.show()
+cv2.imshow("Gradient Method", image_pro.astype("uint8"))
+#(image_bar, err_bar) = BarrierGradient(image, 2, 0.1)
+#plt.plot(numpy.log(err_bar), label="Barrier Gradient")
+#plt.show()
 # image_cvx = cvx_solve(image, 2, 1)
 
 # Debug imagine
 #######################################
-cv2.imshow("Gradient Method", image_pro.astype("uint8"))
-# cv2.imshow("Barier Method", image_bar.astype("uint8"))
+#cv2.imshow("Barier Method", image_bar.astype("uint8"))
 # cv2.imshow("CVX Method", image_cvx.astype("uint8"))
 # cv2.imwrite(image_path + "tv_iso.jpg", (1/10 * image).astype("uint8"))
 cv2.waitKey(0)

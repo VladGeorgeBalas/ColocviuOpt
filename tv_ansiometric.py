@@ -4,10 +4,10 @@ from scipy.ndimage import shift
 def tv_aniso_mat(image_matrix):
     image_matrix = image_matrix.astype(np.float64)
 
-    diff_up = image_matrix - shift(image_matrix, (-1, 0), mode='nearest')
-    diff_left = image_matrix - shift(image_matrix, (0, -1), mode='nearest')
-    diff_down = image_matrix - shift(image_matrix, (1, 0), mode='nearest')
-    diff_right = image_matrix - shift(image_matrix, (0, 1), mode='nearest')
+    diff_up = image_matrix - shift(image_matrix, (-1, 0), cval = 0.0)
+    diff_left = image_matrix - shift(image_matrix, (0, -1), cval = 0.0)
+    diff_down = image_matrix - shift(image_matrix, (1, 0), cval = 0.0)
+    diff_right = image_matrix - shift(image_matrix, (0, 1),cval = 0.0)
 
     # Signs of differences
     sign_up = np.sign(diff_up)
