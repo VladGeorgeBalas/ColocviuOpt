@@ -10,7 +10,7 @@ def ProjectedGradient(sursa, a, b):
     err = []
     while (iters < max_iter) and ok:
         iters = iters + 1
-        print("Iteratia: " + str(iters))
+        # print("Iteratia: " + str(iters))
 
         alpha = 0.15
         beta = 1
