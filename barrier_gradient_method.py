@@ -10,14 +10,11 @@ def BarrierGradient(sursa, a, b):
     err = []
     while (iters < max_iter) and ok:
         iters = iters + 1
-        #print("Iteratia: " + str(iters))
-        # aplicam prima oara gradient lipschitz
+        # aplicam prima oara gradient cu pas lipschitz * alpha
         alpha = 1
         new_image = image_matrix -alpha * gradient.gradient1_L(sursa, image_matrix)
 
         #aplicam subgradientul TV
-        # momentan metoda banala cu un coeficient descrescator
-        # NEAPARAT eficientizam numarul de iteratii cu un primal-dual splitting later
         beta = 5
         new_image = new_image - gradient.subgradient(new_image, a * beta, b * beta)
 
@@ -30,8 +27,8 @@ def BarrierGradient(sursa, a, b):
         ok = ( norm > 1e-6 )
         image_matrix = new_image
 
-    print ("iter = ", iters)
-    print ("norm = ", norm)
+    #print ("iter = ", iters)
+    print ("barrier norm = ", norm)
     #print (image_matrix[image_matrix > 255])
     image_matrix = np.clip(image_matrix, 0, 255)
     return (image_matrix, err)

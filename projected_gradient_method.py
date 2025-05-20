@@ -3,18 +3,18 @@ import numpy as np
 import numpy
 
 def ProjectedGradient(sursa, a, b):
-    max_iter = 100
+    max_iter = 200
     iters = 0
     ok = True
     image_matrix = np.copy(sursa).astype("float32")
     err = []
     while (iters < max_iter) and ok:
         iters = iters + 1
-        # print("Iteratia: " + str(iters))
+         #print("Iteratia: " + str(iters))
 
         alpha = 0.15
         beta = 1
-        # aplicam prima oara gradient lipschitz
+        # aplicam prima oara gradient cu pas lipschitz * alpha
         new_image = image_matrix - alpha * gradient.gradient1_L(sursa, image_matrix)
 
         #aplicam subgradientul :[
@@ -43,6 +43,6 @@ def ProjectedGradient(sursa, a, b):
         ok = ( norm > 1e-3 )
         image_matrix = new_image
 
-    print ("iter = ", iters)
-    print ("norm = ", norm)
+    #print ("iter = ", iters)
+    print ("projected norm = ", norm)
     return (image_matrix, err)

@@ -50,7 +50,7 @@ def tv_isotropic(image_matrix):
 
 def tv_iso_mat(image_matrix):
     from scipy.ndimage import shift
-    import cv2
+
     (m, n) = image_matrix.shape
 
     base = numpy.sqrt(
@@ -87,6 +87,7 @@ def tv_iso_mat(image_matrix):
     # Left neighbor
     result[:-1, 1:] += inv_base[:-1, :-1] * mat3[:-1, 1:]
 
+    return result
 
     #result = numpy.zeros((m, n))
     #for i in range(0, m - 1):
@@ -102,4 +103,3 @@ def tv_iso_mat(image_matrix):
     # cv2.imshow("mat2", mat2.astype('uint8'))
     # cv2.imshow("mat3", mat3.astype('uint8'))
 
-    return result

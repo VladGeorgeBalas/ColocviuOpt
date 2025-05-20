@@ -1,29 +1,58 @@
 import cv2
 import numpy
+from skimage.metrics import peak_signal_noise_ratio
+
 import projected_gradient_method
 import matplotlib.pyplot as plt
 from barrier_gradient_method import BarrierGradient
+from performance import compute_psnr_grayscale, compute_ssim_grayscale
 from projected_gradient_method import ProjectedGradient
 from cvx_grad import cvx_solve
 from colaj import colaj
 from colaj import add_gaussian_noise
+from performance import print_performance
 print("Versiune OpenCV" + cv2.__version__)
 
 # Citire imagine
-image_path = "Poze/example7.jpg"
+image_path = "Poze/example13.png"
 image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
 print("Path: " + image_path)
 print("Image shape: " + str(image.shape))
 
+
 noisy_image = add_gaussian_noise(image)
+
+print("Imagine originala vs Imagine Noisy")
+print_performance(image, noisy_image)
 
 (org_pro, err_org_pro) = ProjectedGradient(image, 2, 0.1)
 (org_bar, err_org_bar) = BarrierGradient(image, 2, 0.1)
 org_cvx = cvx_solve(image, 2, 0.1)
 
+print("Imagine originala vs Imagine originala_proiectie")
+print_performance(image, org_pro)
+
+print("Imagine originala vs Imagine originala_bariera")
+print_performance(image, org_bar)
+
+print("Imagine originala vs Imagine originala_cvx")
+print_performance(image, org_cvx)
+
 (no_pro, err_no_pro) = ProjectedGradient(noisy_image, 2, 0.1)
 (no_bar, err_no_bar) = BarrierGradient(noisy_image, 2, 0.1)
 noo_cvx = cvx_solve(noisy_image, 2, 0.1)
+
+print("Imagine originala vs Imagine noisy_proiectie")
+print_performance(image, no_pro)
+
+print("Imagine originala vs Imagine noisy_bariera")
+print_performance(image, no_bar)
+
+print("Imagine originala vs Imagine noisy_cvx")
+print_performance(image, noo_cvx)
+
+print("Imagine originala proectie vs Imagine noisy proiectie")
+print_performance(org_pro, no_pro)
 
 plt.plot(numpy.log10(err_org_pro), label="Projected Gradient On Original Image")
 plt.xlabel("Iteration")
